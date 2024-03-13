@@ -1,0 +1,4 @@
+use mathematical logic - a+b2 -b+a 
+missing number in array - (n*(n+1))/2 
+
+Ploindrome,reverse , all same concept - start,end ,while loop
