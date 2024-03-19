@@ -4,15 +4,38 @@ package LinkedList;
 public class SingleLinkedList {
     private ListNode head;
 
-    private static class ListNode{
+    private static class ListNode {
         private int data;
         private ListNode next;
 
-        public ListNode(int data){
+        public ListNode(int data) {
             this.data = data;
             this.next = null;
         }
     }
+
+    public void display() {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.print("null");
+    }
+
+    public int NodeCount() {
+        if (head == null) {
+            return 0;
+        }
+        int count = 0;
+        ListNode current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         SingleLinkedList sll = new SingleLinkedList();
         sll.head = new ListNode(10);
@@ -24,12 +47,9 @@ public class SingleLinkedList {
         second.next = third;
         third.next = fourth;
 
-        ListNode current = sll.head;
-        while (current != null) {
-            System.out.print(current.data+" ");
-            current = current.next;
-        }
-        System.out.print("null");
-
+        sll.display();
+        int count = sll.NodeCount();
+        System.out.println();
+        System.out.println(count);
     }
 }
