@@ -19,6 +19,7 @@ public class RetrySingleList {
             System.out.print(current.data + " ");
             current = current.next;
         }
+        System.out.println();
     }
 
     public void insertFirst(int data) {
@@ -40,6 +41,43 @@ public class RetrySingleList {
         current.next = newNode;
     }
 
+    public void addNodePosition(int data, int position) {
+        ListNode newnode = new ListNode(data);
+        if (position == 1) {
+            newnode.next = head;
+            head = newnode;
+        }
+        if (position > 1) {
+            ListNode prevesNode = head;
+            int count = 1;
+            while (count < position - 1) {
+                prevesNode = prevesNode.next;
+                count++;
+            }
+            ListNode current = prevesNode.next;
+            newnode.next = current;
+            prevesNode.next = newnode;
+        }
+    }
+
+    public void insert(int data, int position) {
+        ListNode newNode = new ListNode(data);
+        if (position == 1) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            ListNode previous = head;
+            int count = 1;
+            while (count < position - 1) {
+                previous = previous.next;
+                count++;
+            }
+            ListNode temp = previous.next;
+            previous.next = newNode;
+            newNode.next = temp;
+        }
+    }
+
     public static void main(String[] args) {
         RetrySingleList sll = new RetrySingleList();
         sll.head = new ListNode(10);
@@ -57,9 +95,11 @@ public class RetrySingleList {
         sll.insertFirst(99);
 
         sll.display();
-        System.out.println();
         sll.insertLast(1111);
 
+        sll.display();
+        sll.addNodePosition(00, 3);
+        sll.insert(1000, 1);
         sll.display();
     }
 }

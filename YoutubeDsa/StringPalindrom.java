@@ -1,4 +1,4 @@
-package DemoJava.YoutubeDsa;
+package YoutubeDsa;
 
 public class StringPalindrom {
     public static void main(String[] args) {
