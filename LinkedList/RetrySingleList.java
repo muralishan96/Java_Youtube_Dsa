@@ -26,7 +26,7 @@ public class RetrySingleList {
         System.out.println(text);
         ListNode current = head;
         while (current != null) {
-            System.out.print(current.data + " ");
+            System.out.print(current.data + "--> ");
             current = current.next;
         }
         System.out.println();
@@ -121,7 +121,8 @@ public class RetrySingleList {
         sll.addNodePosition(00, 3);
         sll.insert(1000, 1);
         sll.display("After Insert 1000 in 1 position");
-        sll.deleteFirst();
+        // sll.deleteFirst();
+        System.out.println(sll.deleteFirst().data);
         sll.display("After deleting First Node ");
     }
 }

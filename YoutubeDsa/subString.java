@@ -1,6 +1,6 @@
-package DemoJava.YoutubeDsa;
+package YoutubeDsa;
 
-public class samString {
+public class subString {
     public static void main(String[] args) {
         String s = "Murali";
         String subStr = s.substring(0, 3);
