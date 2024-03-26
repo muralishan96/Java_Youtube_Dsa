@@ -22,5 +22,6 @@ public class StrinEx1 {
         String B3 = B1+B2;
         
         System.out.println(A3+" "+B3);
+        System.out.println();
     }
 }
