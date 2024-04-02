@@ -98,6 +98,18 @@ public class RetrySingleList {
         return temp;
     }
 
+    public boolean find(ListNode head,int searcheKey){
+        if ((head == null)) {
+            return false;
+        }
+        ListNode current = head;
+        while (current.data == searcheKey) {
+            return true;
+        }
+        current = current.next;
+        return false;
+    }
+
     public static void main(String[] args) {
         RetrySingleList sll = new RetrySingleList();
         sll.head = new ListNode(10);
@@ -124,5 +136,13 @@ public class RetrySingleList {
         // sll.deleteFirst();
         System.out.println(sll.deleteFirst().data);
         sll.display("After deleting First Node ");
+
+
+        //searching key
+        if(sll.find(sll.head, 99)){
+            System.out.println("Search Key Found!");
+        }else{
+            System.out.println("Search key not found!");
+        }
     }
 }
